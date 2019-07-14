@@ -1,0 +1,9 @@
+.blog-details-container {
+  margin-top: 50px;
+  /*border-style: solid;*/
+}
+
+.blog-metadata {
+  font-size: 12px;
+  color: darkgray;
+}

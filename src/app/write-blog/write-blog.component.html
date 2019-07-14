@@ -1,0 +1,22 @@
+<div class="container write-blog-container">
+  <h1>New Blog</h1>
+  <br>
+  <form>
+    <div class="form-group">
+      <label>Title</label>
+      <input class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Summary</label>
+        <textarea class="form-control" rows="3" placeholder="Write your summary here ..."></textarea>
+      </div>
+    <div class="form-group">
+      <label>Body</label>
+      <textarea class="form-control" rows="10" placeholder="Write your blog here ..."></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
