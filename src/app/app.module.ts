@@ -9,6 +9,7 @@ import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { WriteBlogComponent } from './write-blog/write-blog.component';
+import { BlogCardComponent } from './blog-card/blog-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { WriteBlogComponent } from './write-blog/write-blog.component';
     BlogsListComponent,
     BlogDetailsComponent,
     HomeComponent,
-    WriteBlogComponent
+    WriteBlogComponent,
+    BlogCardComponent
   ],
   imports: [
     BrowserModule,
