@@ -4,6 +4,6 @@ export interface Blog {
   author: string;
   summary: string;
   body: string;
-  dateCreated: string;
-  dateUpdated: string;
+  dateCreated: Date;
+  dateUpdated: Date;
 }
