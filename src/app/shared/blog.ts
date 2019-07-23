@@ -5,5 +5,14 @@ export interface Blog {
   summary: string;
   body: string;
   dateCreated: Date;
-  dateUpdated: Date;
+  dateUpdated?: Date;
+  comments?: Comment[];
+}
+
+export interface Comment {
+  id: number;
+  author: string;
+  comment: string;
+  dateCreated: Date;
+  dateUpdated?: Date;
 }

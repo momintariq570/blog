@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { User } from './user';
 export class AuthService {
 
   currentUser: User;
+  redirectUrl: string;
 
   constructor() { }
 
@@ -21,5 +23,10 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return !!this.currentUser;
+  }
+
+  updateCurrentUser(firstName: string, lastName: string): void {
+    this.currentUser.firstName = firstName;
+    this.currentUser.lastName = lastName;
   }
 }
