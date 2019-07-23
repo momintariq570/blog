@@ -4,6 +4,7 @@ import { BlogDetailsComponent } from './blogs/blog-details/blog-details.componen
 import { HomeComponent } from './home/home.component';
 import { WriteBlogComponent } from './blogs/write-blog/write-blog.component';
 import { AuthGuard } from './user/auth.guard';
+import { CommentModalComponent } from './blogs/comment-modal/comment-modal.component';
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },

@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { WriteBlogComponent } from './blogs/write-blog/write-blog.component';
 import { BlogCardComponent } from './blogs/blog-card/blog-card.component';
 import { FormsModule } from '@angular/forms';
+import { CommentModalComponent } from './blogs/comment-modal/comment-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     BlogDetailsComponent,
     HomeComponent,
     WriteBlogComponent,
-    BlogCardComponent
+    BlogCardComponent,
+    CommentModalComponent
   ],
   imports: [
     BrowserModule,

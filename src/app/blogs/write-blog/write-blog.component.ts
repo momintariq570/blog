@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Blog } from 'src/app/shared/blog';
+import { Blog } from 'src/app/shared/models/blog';
 import { NgForm } from '@angular/forms';
-import { BlogService } from 'src/app/shared/blog-service';
+import { BlogService } from 'src/app/shared/services/blog-service';
 
 @Component({
   selector: 'app-write-blog',

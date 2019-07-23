@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Blog } from './blog';
+import { Blog } from '../models/blog';
 import { Subject, Observable } from 'rxjs';
-import { AuthService } from '../user/auth.service';
+import { AuthService } from '../../user/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class BlogService {
         id: 1,
         title: 'title 1',
         author: 'author 1',
-        summary: 'summary 1',
+        summary: 'Same an quit most an. Admitting an mr disposing sportsmen. Tried on cause no spoil arise plate. Longer ladies valley get esteem use led six. Middletons resolution advantages expression themselves partiality so me at. West none hope if sing oh sent tell is.',
         body: 'body 1',
         dateCreated: new Date('01/01/2019'),
         dateUpdated: new Date('01/01/2019')
@@ -26,7 +26,7 @@ export class BlogService {
         id: 2,
         title: 'title 2',
         author: 'author 2',
-        summary: 'summary 2',
+        summary: 'Is education residence conveying so so. Suppose shyness say ten behaved morning had. Any unsatiable assistance compliment occasional too reasonably advantages. Unpleasing has ask acceptance partiality alteration understood two. Worth no tiled my at house added. Married he hearing am it totally removal. Remove but suffer wanted his lively length. Moonlight two applauded conveying end direction old principle but. Are expenses distance weddings perceive strongly who age domestic.',
         body: 'body 2',
         dateCreated: new Date('01/01/2019'),
         dateUpdated: new Date('01/01/2019')
