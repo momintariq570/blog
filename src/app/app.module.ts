@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { WriteBlogComponent } from './blogs/write-blog/write-blog.component';
 import { BlogCardComponent } from './blogs/blog-card/blog-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BlogCardComponent } from './blogs/blog-card/blog-card.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

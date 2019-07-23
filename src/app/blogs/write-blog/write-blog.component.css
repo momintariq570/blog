@@ -1,3 +1,5 @@
 .write-blog-container {
   margin-top: 50px;
 }
+
+em { float:right; color:#E05C65; padding-left:10px; }

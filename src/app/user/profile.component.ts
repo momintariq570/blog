@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  templateUrl: './profile.component.html'
+  templateUrl: './profile.component.html',
+  styles: [`
+    em { float:right; color: #E05C65; padding-left: 10px; }
+  `]
 })
 export class ProfileComponent implements OnInit {
 
@@ -13,8 +16,8 @@ export class ProfileComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    let firstName = new FormControl(this.authService.currentUser.firstName);
-    let lastName = new FormControl(this.authService.currentUser.lastName);
+    let firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
+    let lastName = new FormControl(this.authService.currentUser.lastName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
     this.profileForm = new FormGroup({
       firstName: firstName,
       lastName: lastName
@@ -22,13 +25,23 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile(profileForm: FormGroup): void {
-    const firstName = profileForm.value.firstName;
-    const lastName = profileForm.value.lastName;
-    this.authService.updateCurrentUser(firstName, lastName);
-    this.router.navigate(['home']);
+    if (this.profileForm.valid) {
+      const firstName = profileForm.value.firstName;
+      const lastName = profileForm.value.lastName;
+      this.authService.updateCurrentUser(firstName, lastName);
+      this.router.navigate(['home']);
+    }
   }
 
   cancel(): void {
     this.router.navigate(['home']);
+  }
+
+  validateFirstName(): boolean {
+    return this.profileForm.controls.firstName.valid;
+  }
+
+  validateLastName(): boolean {
+    return this.profileForm.controls.lastName.valid;
   }
 }

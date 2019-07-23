@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Blog } from './blog';
 import { Subject, Observable } from 'rxjs';
+import { AuthService } from '../user/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,9 @@ import { Subject, Observable } from 'rxjs';
 export class BlogService {
 
   blogs: Blog[];
+  currentId: number;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.blogs = [
       {
         id: 1,
@@ -84,9 +86,12 @@ export class BlogService {
         dateUpdated: new Date('01/01/2019')
       }
     ];
+
+    this.blogs.sort((a, b) => a.id > b.id ? 1 : -1);
+    this.currentId = this.blogs[this.blogs.length - 1].id;
   }
 
-  getEvents(): Observable<Blog[]> {
+  getBlogs(): Observable<Blog[]> {
     let subject = new Subject<Blog[]>();
     setTimeout(() => {
       subject.next(this.blogs);
@@ -95,7 +100,19 @@ export class BlogService {
     return subject;
   }
 
-  getEvent(id: number): Blog {
+  getBlog(id: number): Blog {
     return this.blogs.find(blog => blog.id === id);
+  }
+
+  saveBlog(title: string, summary: string, body: string): void {
+    const blog: Blog = {
+      id: ++this.currentId,
+      title,
+      author: this.authService.currentUser.userName,
+      summary,
+      body,
+      dateCreated: new Date()
+    };
+    this.blogs.push(blog);
   }
 }

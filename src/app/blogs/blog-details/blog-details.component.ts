@@ -14,7 +14,7 @@ export class BlogDetailsComponent implements OnInit {
   constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.blog = this.blogService.getEvent(+this.activatedRoute.snapshot.params['id']);
+    this.blog = this.blogService.getBlog(+this.activatedRoute.snapshot.params['id']);
   }
 
 }
